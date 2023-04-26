@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon"
+        href="https://i0.wp.com/kata.ws/wp-content/uploads/2023/04/icons8-source-code-ios-16-glyph-96.png?fit=32%2C32&amp;ssl=1"
+        sizes="32x32">
+    <link rel="icon"
+        href="https://i0.wp.com/kata.ws/wp-content/uploads/2023/04/icons8-source-code-ios-16-glyph-96.png?fit=96%2C96&amp;ssl=1"
+        sizes="192x192">
+    <link rel="apple-touch-icon"
+        href="https://i0.wp.com/kata.ws/wp-content/uploads/2023/04/icons8-source-code-ios-16-glyph-96.png?fit=96%2C96&amp;ssl=1">
+    <link rel="stylesheet" href="../guess/css/style.css">
+    <title>Guess Image</title>
+    <script>
+        window.onload = init;
+
+        function init() {
+            var images = document.getElementsByTagName("img");
+            for (var i = 0; i < images.length; i++) {
+                images[i].onmouseover = showAnswer;
+                images[i].onmouseout = reblur;
+            }
+        }
+
+        function showAnswer(eventObj) {
+            var image = eventObj.target;
+            var name = image.id;
+            name = "../guess/images/" + name + ".jpg";
+            image.src = name;
+        }
+
+        function reblur(eventObj) {
+            var image = eventObj.target;
+            var name = image.id;
+            name = "../guess/images/" + name + "blur.jpg";
+            image.src = name;
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="gallery">
+        <img id="zero" src="../guess/images/zeroblur.jpg">
+        <img id="one" src="../guess/images/oneblur.jpg">
+        <img id="two" src="../guess/images/twoblur.jpg">
+        <img id="three" src="../guess/images/threeblur.jpg">
+        <img id="four" src="../guess/images/fourblur.jpg">
+        <img id="five" src="../guess/images/fiveblur.jpg">
+    </div>
+</body>
+
+</html>
